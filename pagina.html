@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CazaCasas</title>
+    <link rel="StyleSheet" href="estilos.css" type="text/css">
+    <script src="jquery-3.7.1.js"></script>
+    <script src="javascript.js"></script>
+
+</head>
+<body>
+    <div id="contenedor">
+        <header>
+            <div>
+                <a href="pagina.html">
+                    <img src="images/logo.png" alt="" >
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="comprar.html">Comprar</a></li>
+                    <li><a href="alquilar.html">Alquilar</a></li>
+                    <li><a href="#pie">Publicar</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="reproductor">
+                <video id="vid"  src="casas.mp4" width="1600" height="700" autoplay muted loop></video>
+            </section>
+
+            <section id="populares">
+                <h1>Lo más destacado</h1>
+            </section>
+
+            <section id="comprar">
+
+                <article>                 
+                    <h2>Casa en Nordelta</h2>
+                    <p>Casa de 4 ambientes ubicacada en el barrio privado Nordelta, 
+                        incluye vista al lago, pileta climatizada, garage para dos autos y parrilla.</p>
+                    <p>Precio: <b>U$S 350.000 </b></p>
+                    <img id="img1" src="images/casa1.jpg" alt="Propiedad 1">
+                </article>
+                <article>                 
+                    <h2>Casa en Belgrano</h2>
+                    <p>Casa de 4 ambientes ubicacada en zona de Belgrano, 
+                        incluye pileta , garage para un auto y un patio.</p>
+                    <p>Precio: <b>U$S 250.000</b> </p>
+                    <img src="images/casa2.jpg" alt="Propiedad 2">
+                </article>
+                <article>                 
+                    <h2>Casa Santa Barbara</h2>
+                    <p>Casa de 8 ambientes ubicacada en el barrio privado Santa Barbara, 
+                        incluye pileta y jacuzzi, garage para dos autos, patio grande.</p>
+                    <p>Precio: <b>U$S 399.999</b></p>
+                    <img src="images/casa3.jpg" alt="Propiedad 3">
+                </article>
+                <article>                 
+                    <h2>Casa Santa Barbara</h2>
+                    <p>Casa de 8 ambientes ubicacada en el barrio privado Santa Barbara, 
+                        incluye pileta y jacuzzi, garage para dos autos, patio grande.</p>
+                    <p>Precio: <b>U$S 399.999</b></p>
+                    <img src="images/casa4.jpg" alt="Propiedad 4">
+                </article>
+            </section>
+        </main>
+
+        <footer id="pie">
+            <h3>Contactanos</h3>
+            <form method="post">
+                <label id="fnombre">Nombre:</label>
+                <input type="text" class="nombreform">
+                <label>Tipo de consulta:</label>
+                <select class="consultaform">
+                    <option></option>
+                    <option>Compra</option>
+                    <option>Alquiler</option>
+                    <option>Publicar</option>
+                    <option>Otra</option>
+                </select>
+                <label>Email:</label>
+                <input type="email" class="emailform">
+                <br>
+                <br>
+                <textarea rows="10" cols="100" class="textform"></textarea>
+                <br>
+                <label>Deseo recibir información sobre novedades y ofertas</label>
+                <input type="checkbox">
+                <br>
+                <button id="enviar">Enviar</button> 
+
+            </form>      
+        </footer>
+
+        <script>
+
+
+            $("#enviar").click(function() {
+                var nombre = $(".nombreform").val();
+                var email = $(".emailform").val(); 
+                var texto = $(".textform").val(); 
+
+                if (nombre == "" && email == "" && texto == "") {
+                    alert("Por favor, completar todos los campos");
+                } else {
+                    alert("Su consulta ha sido enviada con éxito");
+                }
+            });
+
+
+        </script>
+
+    </div>
+</body>
+</html>
